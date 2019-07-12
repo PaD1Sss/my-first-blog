@@ -1,5 +1,4 @@
-{% extends 'blog/base.html' %} {% block content %} {% for post in posts %}
-{%load staticfiles%}
+{% extends 'blog/base.html' %} {% block content %} {%load staticfiles%}
 <div>
   <div class="card" style="width: 18rem;">
     <img src="{% static 'img/1.jpg'%}" class="card-img-top" alt="..." />
@@ -9,5 +8,5 @@
       <a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a>
     </div>
   </div>
-  {% endfor %} {% endblock %}
+  {% endblock %}
 </div>
