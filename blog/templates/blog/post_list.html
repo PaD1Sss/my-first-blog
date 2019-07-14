@@ -1,13 +1,27 @@
-{% extends 'blog/base.html' %} {% block content %} {% for post in posts %}
+{% extends 'blog/base.html' %} {% block content %}
+<div class="container">
+  <div class="perviq">
+<h1>Наши статьи</h1>
+</div>
+</div>
+{% for post in posts %}
 {%load staticfiles%}
-<div>
-  <div class="card" style="width: 18rem;">
-    <img src="{% static 'img/1.jpg'%}" class="card-img-top" alt="..." />
-    <div class="card-body">
-      <h5 class="card-title">{{ post.text | linebreaksbr }}</h5>
-      <p class="card-text">Опубликовано: {{ post.published_date }}</p>
-      <a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a>
+<div class="container">
+  <div class="jumbotron">
+<h1 class="display-4">{{ post.title }}</h1>
+    <p class="lead"> {{ post.text | linebreaksbr }}</p>
+    <hr class="my-4">
+    <p>Опубликовано: {{ post.published_date }}</p>
+    <p class="leadd">  
+        <a class="btn btn-primary btn-lg" href="{% url 'post_detail' pk=post.pk %}" role="button">Перейти</a>
+    </p>
+  </div>
+
+            
+        </div>
+      </div>
     </div>
   </div>
-  {% endfor %} {% endblock %}
 </div>
+</div>
+  {% endfor %} {% endblock %}

@@ -1,8 +1,28 @@
 body {
-  background: #223322;
-  padding-left: 15px;
 }
 h1 а {
-  color: #fca205;
   font-family: "Lobster";
+}
+.card {
+  display: inline;
+}
+.jumbotron p {
+  margin: auto;
+}
+
+.perviq {
+  text-align: center;
+  display: flex;
+  margin-top: 5rem;
+}
+
+.cool {
+  margin-top: 5rem;
+}
+
+.post-form {
+  margin-top: 5rem;
+}
+.navbar navbar-expand-md navbar-dark fixed-top bg-dark {
+  margin-bottom: 5rem;
 }

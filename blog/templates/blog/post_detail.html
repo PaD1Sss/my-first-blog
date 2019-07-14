@@ -1,12 +1,22 @@
-{% extends 'blog/base.html' %} {% block content %} {%load staticfiles%}
-<div>
-  <div class="card" style="width: 18rem;">
-    <img src="{% static 'img/1.jpg'%}" class="card-img-top" alt="..." />
-    <div class="card-body">
-      <h5 class="card-title">{{ post.text | linebreaksbr }}</h5>
-      <p class="card-text">Опубликовано: {{ post.published_date }}</p>
-      <a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a>
+{% extends 'blog/base.html' %} {% block content %}
+  
+     
+<div class="container">
+    <div class="cool">
+      <ul class="list-group"></ul>
+      <li class="list-group-item"> <h1>{{ post.title }}</h1></li>
+      <li class="list-group-item"><p>{{ post.text | linebreaksbr }}</p>
+        {% if post.published_date %}
+          <div class="date">
+            {{ post.published_date }}
+            {% endif %}
+            <div class="redact">
+            <a class="btn btn-primary btn-lg" href="{% url 'post_edit' pk=post.pk %}">редактировать<span class="glyphicon glyphicon-pencil"></span></a></li></div>
+      </ul>
+    </div>
     </div>
   </div>
-  {% endblock %}
+    </div>
+    {% endblock %}
+  </div>
 </div>
